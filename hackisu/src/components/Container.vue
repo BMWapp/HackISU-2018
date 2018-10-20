@@ -10,72 +10,28 @@
 
 		<div id="imgcontainer">
 			<transition name="spin">
-				<img v-if="gameRunning" alt="Vue logo" src="@/assets/OctocatGif.gif">	
+				<img v-if="gameRunning" alt="Image Not Found" v-bind:src='imagePath'>	
 			</transition>
 
 		</div>
 
 		<div class="textarea">
 			<div class="gametextcontainer">
-<!-- :text= '[playername + ", .. you have awoken in the octocat universe.. a real cat-astrophe"]' -->
-
 				<vue-typer 
 					
-					v-bind:text="playername"
+					v-bind:text="story[this.lineNumber]"
 					@completed='showNextLine'
 					v-if="playername"
 					class="gametext" 
 					:repeat='0'
 					:type-delay='60'
 					:erase-on-complete='true'
-					:pre-erase-delay='500'
-					erase-style='clear'>
-				</vue-typer>
-				<vue-typer text= "This is your adventure, continue forward how you wish"
-					v-if="lineComplete"
-					@completed='showNextLine'
-					:repeat='0'
-					class="gametext" 
-					:type-delay='60'
-					:erase-on-complete='false'
-					:pre-erase-delay='500'
-					erase-style='clear'>
-				</vue-typer>
-				<vue-typer text= "Choose Wisely.."
-					v-if="lineComplete && lineNumber > 1"
-					@completed='showNextLine'
-					:repeat='0'
-					class="gametext" 
-					:type-delay='60'
-					:erase-on-complete='false'
 					:pre-erase-delay='500'
 					erase-style='clear'>
 				</vue-typer>
 
-				<!-- modify to only include 1 vue-typer -->
-				<!-- <vue-typer :text= '[story + ", .. you have awoken in the octocat universe.. a real cat-astrophe"]'
-					@completed='showNextLine'
-					v-if="playername"
-					v-bind:story="['first line', 'second line', 'third line']"
-					class="gametext" 
-					:repeat='0'
-					:type-delay='60'
-					:erase-on-complete='true'
-					:pre-erase-delay='500'
-					erase-style='clear'>
-				</vue-typer>
-				<vue-typer text= "This is your adventure, continue forward how you wish"
-					v-if="lineComplete"
-					:repeat='0'
-					class="gametext" 
-					:type-delay='60'
-					:erase-on-complete='false'
-					:pre-erase-delay='500'
-					erase-style='clear'>
-				</vue-typer>  -->
+
 			</div>
-			
-
 		</div>
 
 		<div class="menu">
@@ -113,15 +69,29 @@ export default {
     gameRunning: false,
     nameInputVisible: false,
     lineComplete: false,
-    lineNumber: 1,
     //menuVisible: true,
-    playername: String,
-    story: String
+    playername: String
+
+  },
+  data: function () {
+    return {
+        lineNumber: 0,
+        imagePath: '@/assets/OctocatGif.gif',
+        story: [
+			'You have awoken in the octocat universe.. a real cat-astrophe',
+			'This is your adventure, continue forward how you wish',
+			'You have been given a map with four locations',
+			'Choose Wisely!'
+
+        ],
+    }
   },
   methods: {
     startGame: function(){
       this.gameRunning = !this.gameRunning;
       this.nameInputVisible = true;
+      //this.story.intro = 'You have awoken in the octocat universe.. a real cat-astrophe'
+      //this.story.intropt2 = 'This is your adventure, continue forward how you wish'
       //this.story[0] = "welcome to the game ya idiot"
       //this.menuVisible = false
       //console.log("started forreal")
@@ -134,6 +104,13 @@ export default {
     showNextLine: function(){
 		this.lineComplete = true;
 		this.lineNumber++;
+		if(this.lineNumber == 4){
+			alert("trying to change background");
+			this.changeBackground();
+		}
+    },
+	changeBackground: function(){
+		//this.imagePath = '@/assets/PathChoice1.png'
     }
   }
 
