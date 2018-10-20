@@ -12,3 +12,24 @@ li {
 a {
   color: #42b984;
 }
+
+.v-enter-active {
+	animation: bounceIn 2s;
+}
+
+.v-leave-active {
+	animation: bounceIn 2s reverse;
+}
+
+@keyframes bounceIn {
+	0%{
+		transform: scale(1);
+		transform: rotate(200deg);
+		opacity: 0;
+	}
+	100%{
+		transform: scale(1);
+		transform: rotate(360deg);
+		opacity: 1;
+	}
+}
