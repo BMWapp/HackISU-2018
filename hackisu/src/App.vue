@@ -32,5 +32,11 @@ export default {
 }
 
 
+@font-face {
+    font-family: "";
+    src: url(http://www.example.org/mycustomfont.ttf) format("truetype");
+}
+
+
 
 </style>

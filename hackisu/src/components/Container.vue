@@ -1,3 +1,13 @@
+<!-- TODO: 
+	Fonts Integration
+	Game Logic and Content
+	Import correct images
+	Button Styling/Images
+
+
+
+ -->
+
 <template>
 	<div class="maincontainer">
 
@@ -10,14 +20,11 @@
 
 		<div class="textarea">
 			<div class="gametextcontainer">
-				<vue-typer text='You enter the world..' class="gametext"></vue-typer>
+				<vue-typer text='playername' class="gametext" :type-delay='40'></vue-typer>
 			</div>
 			
 
 		</div>
-
-
-		<!-- <p>Your Name is {{ playername }}</p> -->
 
 		<div class="menu">
 
