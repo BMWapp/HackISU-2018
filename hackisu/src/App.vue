@@ -2,6 +2,7 @@
   <div id="app">
     
     <MainComp msg="Welcome to Your Vue.js App"/>
+
   </div>
 </template>
 
@@ -14,6 +15,8 @@ export default {
     MainComp
   }
 }
+
+
 </script>
 
 <style>
@@ -25,4 +28,7 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+
+
 </style>

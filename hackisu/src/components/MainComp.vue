@@ -1,13 +1,26 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-      <transition>
-        <img v-if="imgvisible" alt="Vue logo" src="@/assets/logo.png">
-      </transition>
-    
-    <p>
-      Welcome to The App
-    </p>
+    <div class="menu">
+      <ul>
+        <li class="menubtn">
+          <button @click="startGame">
+            Start Game
+          </button>
+        </li>
+
+        <li class="menubtn">
+          <button @click="startGame">
+            Also Start Game
+          </button>
+        </li>
+
+      </ul>
+
+    </div>
+
+    <transition>
+      <img v-if="imgvisible" alt="Vue logo" src="@/assets/logo.png">
+    </transition>
 
   </div>
 </template>
@@ -16,9 +29,18 @@
 export default {
   name: 'MainComp',
   props: {
-    msg: String
+    msg: String,
+    imgvisible: false
+  },
+  methods: {
+    startGame: function(){
+      this.imgvisible = !this.imgvisible;
+      console.log("this changed or something")
+    }
   }
+
 }
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
