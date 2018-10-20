@@ -1,25 +1,34 @@
 <template>
 	<div class="maincontainer">
-		<img v-if="gameRunning" alt="Vue logo" src="@/assets/OctocatGif.gif">
-		
-		<transition>
-		  <img v-if="imgvisible" alt="Vue logo" src="@/assets/logo.png">
-		</transition>
 
+		<div id="imgcontainer">
+			<transition name="spin">
+				<img v-if="gameRunning" alt="Vue logo" src="@/assets/OctocatGif.gif">	
+			</transition>
+
+		</div>
+
+		<div class="textarea">
+
+
+		</div>
+
+		<input v-if="nameInputVisible" v-model="playername" placeholder="Enter Player Name" @keyup.enter="disappear" id="nameinput">
+		<!-- <p>Your Name is {{ playername }}</p> -->
 
 		<div class="menu">
-		  <ul class="mtest">
-		    <li>
-		      <button @click="changeImg" class="menubtn">
-		        Start Game
-		      </button>
-		    </li>
-		    <li>
-		      <button @click="startGame" class="menubtn">
-		        Start Game But It Works
-		      </button>
-		    </li>
-		  </ul>
+			<ul class="mtest">
+				<li>
+					<button @click="startGame" class="menubtn">
+						Start Game
+					</button>
+				</li>
+				<li>
+					<button @click="startGame" class="menubtn">
+						Start Game But It Works
+					</button>
+				</li>
+			</ul>
 		</div>
 
 	</div>	
@@ -32,17 +41,21 @@
 export default {
   name: 'Container',
    props: {
-    imgvisible: false,
-    gameRunning: false
+    gameRunning: false,
+    nameInputVisible: false,
+    //menuVisible: true,
+    playername: String
   },
   methods: {
-    changeImg: function(){
-      this.imgvisible = !this.imgvisible;
-      //console.log("this changed or something")
-    },
     startGame: function(){
-      this.gameRunning = !this.gameRunning
-      console.log("started forreal")
+      this.gameRunning = !this.gameRunning;
+      this.nameInputVisible = true;
+      //this.menuVisible = false
+      //console.log("started forreal")
+    },
+    disappear: function(){
+      this.nameInputVisible = false
+      //this.menuVisible = true
     }
   }
 

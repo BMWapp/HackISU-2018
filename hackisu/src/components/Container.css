@@ -19,7 +19,7 @@ li {
 
 
 .menubtn {
-	padding: 30px;
+	padding: 10px;
 	border-radius:10px;
 	background-color: #fe9ec5;
 	font-size: 24px;
@@ -27,32 +27,58 @@ li {
 }
 
 
+#imgcontainer{
+	border: 2px solid blue;
+	height: 400px;
+}
+
+
+/*TEXT AREA*/
+.textarea{
+	border: 2px solid red;
+	height: 300px;
+
+}
+
+
+
 /*ISSUE: vue pushes other elements down when octocat activated*/
 .menu {
 	list-style-type: none;
-	height: 120px;
+	height: 90px;
 	/*margin changes margins of entire container*/
-	border: 3px solid black;
+	border: 3px solid #2c3e50;
+	/*position: fixed;*/
 
 }
 
-
-.v-enter-active {
-  animation: bounceIn .3s;
+#nameinput {
+	border: 2px solid black;
+	border-radius: 10px;
+	height: 50px;
+	font-size: 32px;
+	color: #2c3e50;
+	position: fixed;
 }
 
-.v-leave-active {
-  animation: bounceIn .3s reverse;
+
+.spin-enter-active {
+  animation: bounceIn 3s;
+}
+
+.spin-leave-active {
+  animation: bounceIn 3s reverse;
 }
 
 @keyframes bounceIn {
   0%{
-    transform: scale(0);
+    transform: rotate(0deg);
     opacity: 0;
   }
 
   100%{
-    transform: scale(1);
+    transform: rotate(1080deg);
     opacity: 1;
   }
 }
+ /*------------OTHER---------------*/
