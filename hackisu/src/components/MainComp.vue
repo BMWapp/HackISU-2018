@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    
+
 
     <transition>
       <img v-if="imgvisible" alt="Vue logo" src="@/assets/logo.png">
@@ -35,11 +35,11 @@ export default {
   methods: {
     changeImg: function(){
       this.imgvisible = !this.imgvisible;
-      console.log("this changed or something")
+      //console.log("this changed or something")
     },
     startGame: function(){
-      gameRunning = true
-      console.log("started forreal")
+      this.gameRunning = true
+      //console.log("started forreal")
     }
   }
 

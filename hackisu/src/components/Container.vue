@@ -1,20 +1,49 @@
 <template>
-
 	<div class="maincontainer">
-		<p v-if="gameRunning">The game has been started</p>
+		<img v-if="gameRunning" alt="Vue logo" src="@/assets/OctocatGif.gif">
+		
+		<transition>
+		  <img v-if="imgvisible" alt="Vue logo" src="@/assets/logo.png">
+		</transition>
 
-	</div>
-	
+
+		<div class="menu">
+		  <ul class="mtest">
+		    <li>
+		      <button @click="changeImg" class="menubtn">
+		        Start Game
+		      </button>
+		    </li>
+		    <li>
+		      <button @click="startGame" class="menubtn">
+		        Start Game But It Works
+		      </button>
+		    </li>
+		  </ul>
+		</div>
+
+	</div>	
 </template>
 
 
 <script>
-import MainComp from './MainComp.vue'
+
 	
 export default {
   name: 'Container',
-  props: {
-    
+   props: {
+    imgvisible: false,
+    gameRunning: false
+  },
+  methods: {
+    changeImg: function(){
+      this.imgvisible = !this.imgvisible;
+      //console.log("this changed or something")
+    },
+    startGame: function(){
+      this.gameRunning = !this.gameRunning
+      console.log("started forreal")
+    }
   }
 
 }
