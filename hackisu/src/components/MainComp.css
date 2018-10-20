@@ -1,6 +1,4 @@
-h3 {
-  margin: 40px 0 0;
-}
+
 ul {
   list-style-type: none;
   padding: 0;
@@ -8,9 +6,6 @@ ul {
 li {
   display: inline-block;
   margin: 0 10px;
-}
-a {
-  color: #42b983;
 }
 
 
@@ -20,6 +15,12 @@ a {
 	background-color: #fe9ec5;
 	font-size: 24px;
 	color: black;
+}
+
+.menu {
+	list-style-type: none;
+
+
 }
 
 .v-enter-active {

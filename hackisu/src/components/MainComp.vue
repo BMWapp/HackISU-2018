@@ -1,26 +1,25 @@
 <template>
   <div class="hello">
-    <div class="menu">
-      <ul>
-        <li class="menubtn">
-          <button @click="startGame">
-            Start Game
-          </button>
-        </li>
-
-        <li class="menubtn">
-          <button @click="startGame">
-            Also Start Game
-          </button>
-        </li>
-
-      </ul>
-
-    </div>
+    
 
     <transition>
       <img v-if="imgvisible" alt="Vue logo" src="@/assets/logo.png">
     </transition>
+
+    <div class="menu">
+      <ul class>
+        <li>
+          <button @click="changeImg" class="menubtn">
+            Start Game
+          </button>
+        </li>
+        <li>
+          <button @click="startGame" class="menubtn">
+            Start Game But It Works
+          </button>
+        </li>
+      </ul>
+    </div>
 
   </div>
 </template>
@@ -30,12 +29,17 @@ export default {
   name: 'MainComp',
   props: {
     msg: String,
-    imgvisible: false
+    imgvisible: false,
+    gameRunning: false
   },
   methods: {
-    startGame: function(){
+    changeImg: function(){
       this.imgvisible = !this.imgvisible;
       console.log("this changed or something")
+    },
+    startGame: function(){
+      gameRunning = true
+      console.log("started forreal")
     }
   }
 
