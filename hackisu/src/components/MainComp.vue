@@ -1,6 +1,10 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+      <transition>
+        <img v-if="imgvisible" alt="Vue logo" src="@/assets/logo.png">
+      </transition>
+    
     <p>
       Welcome to The App
     </p>
