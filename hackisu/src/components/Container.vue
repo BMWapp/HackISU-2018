@@ -9,15 +9,22 @@
 		</div>
 
 		<div class="textarea">
-
+			<div class="gametextcontainer">
+				<vue-typer text='You enter the world..' class="gametext"></vue-typer>
+			</div>
+			
 
 		</div>
 
-		<input v-if="nameInputVisible" v-model="playername" placeholder="Enter Player Name" @keyup.enter="disappear" id="nameinput">
+
 		<!-- <p>Your Name is {{ playername }}</p> -->
 
 		<div class="menu">
+
 			<ul class="mtest">
+				<li>
+					<input v-if="nameInputVisible" v-model="playername" placeholder="Enter Player Name" @keyup.enter="disappear" id="nameinput">
+				</li>
 				<li>
 					<button @click="startGame" class="menubtn">
 						Start Game
@@ -36,11 +43,14 @@
 
 
 <script>
-
+import { VueTyper } from 'vue-typer'
 	
 export default {
   name: 'Container',
-   props: {
+  components: {
+  	VueTyper
+  },
+  props: {
     gameRunning: false,
     nameInputVisible: false,
     //menuVisible: true,
