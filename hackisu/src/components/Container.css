@@ -26,13 +26,14 @@
 .gametextcontainer{
 	margin: 50px;
 	height: 200px;
-	border: 2px solid yellow;
+	/*border: 2px solid yellow;*/
 }
 
 .gametext{
-	border: 2px solid orange;
-	font-size: 24px;
+	/*border: 2px solid orange;*/
+	font-size: 28px;
 	float: left;
+	position: relative;
 	font-family: 'Arial'
 
 }
