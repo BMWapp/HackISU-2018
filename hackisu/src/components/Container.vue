@@ -171,7 +171,16 @@ export default {
 			//crossbow
 			'The snakes slowly overwhelm you..',
 			'The crossbow was ineffective. You Died',
-			//
+			'You died rip', //53
+			//Hide after Castle
+			'The other path leads to a monster\'s lair..',
+			'Having no other option, you go in..',
+			'THE OCTOCAT!!!',
+			'You don\'t have very effective weapons, the chances are not good',
+			//win
+			'Somehow, the Octocat has been defeated!',
+			//lose
+			'As expected, you have been slain'
 
 			
 			
@@ -273,7 +282,7 @@ export default {
 			this.showFirstChoiceLayout(6);
 			this.watingForInput = true;
 		}
-		else if(this.lineNumber == 36){
+		else if(this.lineNumber == 37){
 			this.changeBackground();
 			this.showFirstChoiceLayout(7);
 			this.watingForInput = true;
@@ -361,7 +370,7 @@ export default {
 			this.lineNumber = 12;
 			if(this.hasKnives){
 				//die
-				this.lineNumber = 14;
+				this.lineNumber = 53;
 			}
 			else{
 				//live
@@ -372,7 +381,7 @@ export default {
 			this.lineNumber = 18;
 		}
 		else if(this.choice1 == 'temple'){
-			this.lineNumber = 1; //change when we write the story
+			this.lineNumber = 34; //change when we write the story
 		}
 
 		else if(this.choice1 == 'investigate'){
@@ -384,7 +393,7 @@ export default {
 
 		else if(this.choice1 == 'fight'){
 			//die
-			this.lineNumber = 14;
+			this.lineNumber = 53;
 
 		}
 		else if(this.choice1 == 'run'){
@@ -394,7 +403,7 @@ export default {
 
 		else if(this.choice1 == 'left'){
 			//die
-			this.lineNumber = 38;
+			this.lineNumber = 53;
 
 		}
 		else if(this.choice1 == 'right'){
