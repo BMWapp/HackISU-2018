@@ -56,6 +56,12 @@
 
 				<li><button v-if="investigateOrHide" @click="clickChoiceButton('investigate')" class="menubtn">Investigate</button></li>
 				<li><button v-if="investigateOrHide" @click="clickChoiceButton('hide')" class="menubtn">Hide</button></li>
+
+				<li><button v-if="fightOrRun" @click="clickChoiceButton('fight')" class="menubtn">Fight</button></li>
+				<li><button v-if="fightOrRun" @click="clickChoiceButton('run')" class="menubtn">Run</button></li>
+
+				<li><button v-if="leftOrRight" @click="clickChoiceButton('left')" class="menubtn">Left</button></li>
+				<li><button v-if="leftOrRight" @click="clickChoiceButton('right')" class="menubtn">Right</button></li>
 					
 			</ul>
 		</div>
@@ -127,7 +133,31 @@ export default {
 			'You\'re so out of breath, so you stop at a tree stump',
 			'As you walk closer, you see that it is actually a chest!',
 			'Inside is a blow dart!',
-			''
+			//TEMPLE BEGINS
+			'You walk into an abandoned temple..', //34
+			'Ancient drawings detail the orgins of the world',
+			'On the path, you find an endless labyrinth',
+			'To start, you can go left or right..', //CHOICE
+			//if left
+			'You notice several holes along the wall..', //38
+			'It seems to be some sort of trigger mechanism',
+			'You can use your weapons to test out the traps..', //mtns -> (a,a) -> temple -> left
+			'You launch your weapon down the corridor',
+			'It hits a stone wall in the distance..',
+			'Rapid fire arrows shoot out of the holes!',
+			'You can\'t escape in time and die' ,
+			//if right
+			'The path is dark and ominous..', //45
+			'You hear hissing noises in the distance',
+			'Hundreds of snakes block the path!',
+			'You need to use a weapon to get them to move..',
+			'Choose the weapon you want to try..', //WPN CHOICE
+			//blowdart or knives
+			'You scared them away!', //50
+			//crossbow
+			'The snakes slowly overwhelm you..',
+			'The crossbow was ineffective. You Died'
+
 
 			
 			
@@ -149,13 +179,15 @@ export default {
 
 		//imgChoice: 0,
 		//imagePath: this.imgName[this.imgChoice],
-
+		weapons: ['blowdart'],
         startMenu: true,
         mtnOrJungle: false,
         knivesOrCrossbow: false,
         minotaurOrDragon: false,
         castleOrTemple: false,
         investigateOrHide: false,
+        fightOrRun: false,
+        leftOrRight: false,
         choice1: '',
         watingForInput: false,
 		hasKnives: false
@@ -207,6 +239,17 @@ export default {
 			this.showFirstChoiceLayout(5);
 			this.watingForInput = true;
 		}
+		else if(this.lineNumber == 29){
+			this.changeBackground();
+			this.showFirstChoiceLayout(6);
+			this.watingForInput = true;
+		}
+		else if(this.lineNumber == 36){
+			this.changeBackground();
+			this.showFirstChoiceLayout(7);
+			this.watingForInput = true;
+		}
+
 		else{
 			this.lineNumber++;
 		}
@@ -237,8 +280,16 @@ export default {
 			this.castleOrTemple = false;
 			this.investigateOrHide = true;
 		}
+		else if(choice == 6){
+			this.mtnOrJungle = false;
+			this.fightOrRun = true;
+		}
+		else if(choice == 7){
+			this.fightOrRun = false;
+			this.leftOrRight = true;
+		}
     },
-
+    //WHEN DONE: change all die events to line 99 (or last)
     clickChoiceButton: function(choice){
 		this.choice1 = choice;
 		//console.log(this.choice1);
@@ -258,12 +309,13 @@ export default {
 		}
 
 		else if(this.choice1 == 'knives'){
-			this.hasKnives = true;
+			this.weapons += 'knives';
 			this.lineNumber = 8;
 			this.imgChoice = 2;
 			this.changeBackground();
 		}
 		else if(this.choice1 == 'crossbow'){
+			this.weapons += 'crossbow';
 			this.lineNumber = 8;
 			this.imgChoice = 2;
 			this.changeBackground();
@@ -301,6 +353,27 @@ export default {
 		else if(this.choice1 == 'hide'){
 			this.lineNumber = 1; //update later with story
 		}
+
+		else if(this.choice1 == 'fight'){
+			//die
+			this.lineNumber = 14;
+
+		}
+		else if(this.choice1 == 'run'){
+			//live
+			this.lineNumber = 30; 
+		}
+
+		else if(this.choice1 == 'left'){
+			//die
+			this.lineNumber = 38;
+
+		}
+		else if(this.choice1 == 'right'){
+			//live
+			this.lineNumber = 45; 
+		}
+
 
     }
   }
