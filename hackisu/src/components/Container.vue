@@ -12,7 +12,18 @@
 
 		<div id="imgcontainer">
 			<transition name="spin">
-				<img v-if="gameRunning" alt="Fuck this shit I'm out" v-bind:src='imagePath'>	
+				<img v-if="mtnOrJungle" alt="Fuck this shit I'm out" src='@/assets/MountainWepChoice.png'>	
+				<img v-if="knivesOrCrossbow" alt="Fuck this shit I'm out" src='@/assets/MountainPathChoice.png'>
+				<img v-if="minotaurOrDragon" alt="Fuck this shit I'm out" src='@/assets/MountainPathChoice.png'>
+				<img v-if="mtnOrJungle" alt="Fuck this shit I'm out" src='@/assets/MountainPathChoice.png'>
+				<img v-if="mtnOrJungle" alt="Fuck this shit I'm out" src='@/assets/MountainPathChoice.png'>
+				<img v-if="mtnOrJungle" alt="Fuck this shit I'm out" src='@/assets/MountainPathChoice.png'>
+				<img v-if="mtnOrJungle" alt="Fuck this shit I'm out" src='@/assets/MountainPathChoice.png'>
+				<img v-if="mtnOrJungle" alt="Fuck this shit I'm out" src='@/assets/MountainPathChoice.png'>
+				<img v-if="mtnOrJungle" alt="Fuck this shit I'm out" src='@/assets/MountainPathChoice.png'>
+				<img v-if="mtnOrJungle" alt="Fuck this shit I'm out" src='@/assets/MountainPathChoice.png'>
+
+
 			</transition>
 
 		</div>
@@ -168,6 +179,7 @@ export default {
 		],
 		jokes: [],
 		imgName: [],
+		gameState: [],
 		//imgName: [
 		//	'@/assets/PathChoice1.png',//0
 		//	'@/assets/MountainWepChoice.png',//1
