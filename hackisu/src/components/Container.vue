@@ -80,9 +80,9 @@ export default {
   data: function () {
     return {
         lineNumber: 0,
-        imagePath: '@/assets/',
+        imagePath: '@/assets/PathChoice1.png',
         story: [
-			'You have awoken in the octocat universe.. a real cat-astrophe',
+			'You have awoken in the Octocat universe.. a real cat-astrophe',
 			'This is your adventure, continue forward how you wish', 
 			'You have been given a map with four locations',
 			'Choose Wisely!', //CHOICE
@@ -187,7 +187,7 @@ export default {
 
     },
 	changeBackground: function(){
-		this.imagePath = '@/assets/{{this.imgName[this.imgChoice]}}.png'
+		//this.imagePath = '@/assets/{{this.imgName[this.imgChoice]}}.png'
     },
     showFirstChoiceLayout: function(choice){
 		//change buttons
