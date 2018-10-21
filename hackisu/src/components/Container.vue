@@ -154,7 +154,7 @@ export default {
     showNextLine: function(){
 		this.lineComplete = true;
 		if(this.lineNumber == 3){ //index of first choice
-			this.changeBackground();
+			//this.changeBackground();
 			this.showFirstChoiceLayout(1);
 			//if waiting for input, checkc if either button pressed
 			this.watingForInput = true;
@@ -163,21 +163,21 @@ export default {
 
 		}
 		else if(this.lineNumber == 7){
-			this.changeBackground();
+			//this.changeBackground();
 			this.showFirstChoiceLayout(2);
 			//if waiting for input, checkc if either button pressed
 			this.watingForInput = true;
 
 		}
 		else if(this.lineNumber == 11){
-			this.changeBackground();
+			//this.changeBackground();
 			this.showFirstChoiceLayout(3);
 			//if waiting for input, checkc if either button pressed
 			this.watingForInput = true;
 
 		}
 		else if(this.lineNumber == 17){
-			this.changeBackground();
+			//this.changeBackground();
 			this.showFirstChoiceLayout(4);
 			this.watingForInput = true;
 		}
@@ -216,20 +216,24 @@ export default {
 		if(this.choice1 == 'mountains'){
 			this.imgChoice = 1;
 			this.lineNumber = 4;
+			this.changeBackground();
 		}
 		else if(this.choice1 == 'jungle'){
 			this.imgChoice == 5;
 			this.lineNumber = 1;
+			this.changeBackground();
 		}
 
 		else if(this.choice1 == 'knives'){
 			this.hasKnives = true;
 			this.lineNumber = 8;
 			this.imgChoice = 2;
+			this.changeBackground();
 		}
 		else if(this.choice1 == 'crossbow'){
 			this.lineNumber = 8;
 			this.imgChoice = 2;
+			this.changeBackground();
 		}
 
 		else if(this.choice1 == 'minotaur'){
