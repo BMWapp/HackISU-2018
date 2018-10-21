@@ -80,7 +80,6 @@ export default {
   data: function () {
     return {
         lineNumber: 0,
-        imagePath: '@/assets/PathChoice1.png',
         story: [
 			'You have awoken in the Octocat universe.. a real cat-astrophe',
 			'This is your adventure, continue forward how you wish', 
@@ -129,6 +128,7 @@ export default {
 			'@/assets/GameOver.png',//9
 		],
 		imgChoice: 0,
+		imagePath: imgName[imgChoice],
         startMenu: true,
         mtnOrJungle: false,
         knivesOrCrossbow: false,
