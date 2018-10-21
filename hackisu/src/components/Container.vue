@@ -50,6 +50,9 @@
 
 				<li><button v-if="minotaurOrDragon" @click="clickChoiceButton('minotaur')" class="menubtn">Minotaur</button></li>
 				<li><button v-if="minotaurOrDragon" @click="clickChoiceButton('dragon')" class="menubtn">Dragon</button></li>
+
+				<li><button v-if="castleOrTemple" @click="clickChoiceButton('castle')" class="menubtn">Castle</button></li>
+				<li><button v-if="castleOrTemple" @click="clickChoiceButton('temple')" class="menubtn">Temple</button></li>
 					
 			</ul>
 		</div>
@@ -102,7 +105,9 @@ export default {
 			//if throwing knives and minautar, survive
 			//if crossbow and dragon, survive 
 			'You\'ve come across another fork in the road',
-			'Will you contine onto the castle or the temple?'
+			'Will you contine onto the castle or the temple?', //CHOICE
+			//continues as if castle, jump to __ for temple
+			'You walk into the castle after seeing a '
 			
 			
 
@@ -180,6 +185,10 @@ export default {
 			this.knivesOrCrossbow = false;
 			this.minotaurOrDragon = true;
 		}
+		else if(choice == 4){
+			this.minotaurOrDragon = false;
+			this.castleOrTemple = true;
+		}
     },
 
     clickChoiceButton: function(choice){
@@ -219,6 +228,12 @@ export default {
 				//live
 				this.lineNumber = 15;
 			}
+		}
+		else if(this.choice1 == 'castle'){
+			this.lineNumber = 
+		}
+		else if(this.choice1 == 'temple'){
+
 		}
 
     }
