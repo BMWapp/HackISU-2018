@@ -135,10 +135,10 @@ export default {
 			'@/assets/PathChoice2.png',//6
 			'@/assets/ThroneRoom.png',//7
 			'@/assets/TempleWall.png',//8
-			'@/assets/GameOver.png',//9
+			'@/assets/GameOver.png'//9
 		],
-		imgChoice: 0,
-		imagePath: imgName[imgChoice],
+		//imgChoice: 0,
+		//imagePath: this.imgName[this.imgChoice],
         startMenu: true,
         mtnOrJungle: false,
         knivesOrCrossbow: false,
@@ -202,7 +202,7 @@ export default {
 
     },
 	changeBackground: function(){
-		this.imagePath = this.imgName[this.imgChoice];
+		//this.imagePath = this.imgName[this.imgChoice];
     },
     showFirstChoiceLayout: function(choice){
 		//change buttons
