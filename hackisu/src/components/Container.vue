@@ -10,7 +10,7 @@
 
 		<div id="imgcontainer">
 			<transition name="spin">
-				<img v-if="gameRunning" alt="Image Not Found" v-bind:src='imagePath'>	
+				<img v-if="gameRunning" alt="Fuck this shit I'm out" v-bind:src='imagePath'>	
 			</transition>
 
 		</div>
