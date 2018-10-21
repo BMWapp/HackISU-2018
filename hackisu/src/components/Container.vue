@@ -125,6 +125,7 @@ export default {
 			'Would you like to hear a joke?',
 			'You say yes, who doesn\'t like a good joke?',
 			//say a random joke
+
 			// JUNGLE BEGINS
 			'You cut through dense foliage in the jungle..', //27
 			'You come across an angry jaguar!',
@@ -156,30 +157,35 @@ export default {
 			'You scared them away!', //50
 			//crossbow
 			'The snakes slowly overwhelm you..',
-			'The crossbow was ineffective. You Died'
-
+			'The crossbow was ineffective. You Died',
+			''
 
 			
 			
 
 		],
 		jokes: [],
+		imgName: [],
 		imgName: [
-			'@/assets/PathChoice1.png',//0
-			'@/assets/MountainWepChoice.png',//1
-			'@/assets/MountainPathChoice.png',//2
-			'@/assets/Minotaur.png',//3
-			'@/assets/Dragon.png',//4
-			'@/assets/Jaguar.png',//5
-			'@/assets/PathChoice2.png',//6
-			'@/assets/ThroneRoom.png',//7
-			'@/assets/TempleWall.png',//8
-			'@/assets/GameOver.png'//9
+		//	'@/assets/PathChoice1.png',//0
+		//	'@/assets/MountainWepChoice.png',//1
+		//	'@/assets/MountainPathChoice.png',//2
+		//	'@/assets/Minotaur.png',//3
+		//	'@/assets/Dragon.png',//4
+		//	'@/assets/Jaguar.png',//5
+		//	'@/assets/PathChoice2.png',//6
+		//	'@/assets/ThroneRoom.png',//7
+		//	'@/assets/TempleWall.png',//8
+		//	'@/assets/GameOver.png'//9
 		],
 
 		//imgChoice: 0,
 		//imagePath: this.imgName[this.imgChoice],
 		weapons: ['blowdart'],
+
+		imgChoice: null,
+		imagePath: null,
+
         startMenu: true,
         mtnOrJungle: false,
         knivesOrCrossbow: false,
@@ -195,9 +201,18 @@ export default {
   },
   methods: {
     startGame: function(){
-      this.gameRunning = !this.gameRunning;
-      this.nameInputVisible = true;
-
+		this.gameRunning = !this.gameRunning;
+		this.nameInputVisible = true;
+		this.imgName[0]='@/assets/PathChoice1.png';
+		this.imgName[1]='@/assets/MountainWepChoice.png';
+		this.imgName[2]='@/assets/MountainPathChoice.png';
+		this.imgName[3]='@/assets/Minotaur.png';
+		this.imgName[4]='@/assets/Dragon.png';
+		this.imgName[5]='@/assets/Jaguar.png';
+		this.imgName[6]='@/assets/PathChoice2.png';
+		this.imgName[7]='@/assets/ThroneRoom.png';
+		this.imgName[8]='@/assets/TempleWall.png';
+		this.imgName[9]='@/assets/GameOver.png';
     },
     disappear: function(){
       this.nameInputVisible = false
@@ -256,7 +271,7 @@ export default {
 
     },
 	changeBackground: function(){
-		//this.imagePath = this.imgName[this.imgChoice];
+		this.imagePath = this.imgName[this.imgChoice];
     },
     showFirstChoiceLayout: function(choice){
 		//change buttons
@@ -302,12 +317,11 @@ export default {
 		else if(this.choice1 == 'jungle'){
 			this.imgChoice == 5;
 
-			this.lineNumber = 27; //update with story
+			this.lineNumber = 1; //update with story
 
 			this.changeBackground();
 
 		}
-
 		else if(this.choice1 == 'knives'){
 			this.weapons += 'knives';
 			this.lineNumber = 8;
