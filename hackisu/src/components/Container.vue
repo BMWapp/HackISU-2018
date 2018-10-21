@@ -187,7 +187,7 @@ export default {
 
     },
 	changeBackground: function(){
-		this.imagePath = 'this.imgName[this.imgChoice]';
+		this.imagePath = this.imgName[this.imgChoice];
     },
     showFirstChoiceLayout: function(choice){
 		//change buttons
@@ -225,9 +225,11 @@ export default {
 		else if(this.choice1 == 'knives'){
 			this.hasKnives = true;
 			this.lineNumber = 8;
+			this.imgChoice = 2;
 		}
 		else if(this.choice1 == 'crossbow'){
 			this.lineNumber = 8;
+			this.imgChoice = 2;
 		}
 
 		else if(this.choice1 == 'minotaur'){
