@@ -1,8 +1,10 @@
 <!-- TODO: 
 	Fonts Integration - Nitin
 	Game Logic and Content - Justin
+		create: inventory array integration with v-for
 	Import correct images - Brevin
 	Button Styling/Images
+
  -->
 
 <template>
@@ -158,7 +160,7 @@ export default {
 			//crossbow
 			'The snakes slowly overwhelm you..',
 			'The crossbow was ineffective. You Died',
-			''
+			//
 
 			
 			
@@ -166,7 +168,7 @@ export default {
 		],
 		jokes: [],
 		imgName: [],
-		imgName: [
+		//imgName: [
 		//	'@/assets/PathChoice1.png',//0
 		//	'@/assets/MountainWepChoice.png',//1
 		//	'@/assets/MountainPathChoice.png',//2
@@ -177,7 +179,7 @@ export default {
 		//	'@/assets/ThroneRoom.png',//7
 		//	'@/assets/TempleWall.png',//8
 		//	'@/assets/GameOver.png'//9
-		],
+		//],
 
 		//imgChoice: 0,
 		//imagePath: this.imgName[this.imgChoice],
@@ -317,7 +319,7 @@ export default {
 		else if(this.choice1 == 'jungle'){
 			this.imgChoice == 5;
 
-			this.lineNumber = 1; //update with story
+			this.lineNumber = 27; 
 
 			this.changeBackground();
 
