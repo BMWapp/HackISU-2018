@@ -114,16 +114,16 @@ export default {
 		],
 		jokes: [],
 		imgName: [
-			'PathChoice1',//0
-			'MountainWepChoice',//1
-			'MountainPathChoice',//2
-			'Minotaur',//3
-			'Dragon',//4
-			'Jaguar',//5
-			'PathChoice2',//6
-			'ThroneRoom',//7
-			'TempleWall',//8
-			'GameOver',//9
+			'@/assets/PathChoice1.png',//0
+			'@/assets/MountainWepChoice.png',//1
+			'@/assets/MountainPathChoice.png',//2
+			'@/assets/Minotaur.png',//3
+			'@/assets/Dragon.png',//4
+			'@/assets/Jaguar.png',//5
+			'@/assets/PathChoice2.png',//6
+			'@/assets/ThroneRoom.png',//7
+			'@/assets/TempleWall.png',//8
+			'@/assets/GameOver.png',//9
 		],
 		imgChoice: 0,
         startMenu: true,
@@ -183,7 +183,7 @@ export default {
 
     },
 	changeBackground: function(){
-		//this.imagePath = '@/assets/{{this.imgName[this.imgChoice]}}.png'
+		this.imagePath = 'this.imgName[this.imgChoice]';
     },
     showFirstChoiceLayout: function(choice){
 		//change buttons
