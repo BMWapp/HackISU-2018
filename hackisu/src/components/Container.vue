@@ -107,7 +107,10 @@ export default {
 			'You\'ve come across another fork in the road',
 			'Will you contine onto the castle or the temple?', //CHOICE
 			//continues as if castle, jump to __ for temple
-			'You walk into the castle after seeing a '
+			'You walk into the castle and see a sword..', //18
+			'Curious, you creep toward the sword to grab it',
+			'There\'s a mysterious noise inside the castle..',
+			'Do you investigate or hide?' //CHOICE
 			
 			
 
@@ -131,6 +134,7 @@ export default {
         knivesOrCrossbow: false,
         minotaurOrDragon: false,
         castleOrTemple: false,
+        investigateOrHide: false,
         choice1: '',
         watingForInput: false,
 		hasKnives: false,
@@ -246,10 +250,10 @@ export default {
 			}
 		}
 		else if(this.choice1 == 'castle'){
-			this.lineNumber = 
+			this.lineNumber = 18;
 		}
 		else if(this.choice1 == 'temple'){
-
+			this.lineNumber = 1; //change when we write the story
 		}
 
     }
