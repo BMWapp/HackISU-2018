@@ -37,29 +37,20 @@
 		<div class="menu">
 
 			<ul class="mtest">
-				<li>
-					<input v-if="nameInputVisible" v-model="playername" placeholder="Enter Player Name" @keyup.enter="disappear" id="nameinput">
-				</li>
-				<li>
-					<button @click="startGame"  v-if="startMenu"  class="menubtn">Start Game</button>
-				</li>
-				<li>
-					<button @click="startGame" v-if="startMenu" class="menubtn">Start Game But It Works</button>
-				</li>
+				<li><input v-if="nameInputVisible" v-model="playername" placeholder="Enter Player Name" @keyup.enter="disappear" id="nameinput"></li>					
 
-				<li>
-					<button v-if="mtnOrJungle" @click="clickChoiceButton('mountains')" class="menubtn">Mountains</button>
-				</li>
-				<li >
-					<button v-if="mtnOrJungle" @click="clickChoiceButton('jungle')" class="menubtn">Jungle</button>
-				</li>
+				<li><button @click="startGame"  v-if="startMenu"  class="menubtn">Start Game</button></li>		
+				<li><button @click="startGame" v-if="startMenu" class="menubtn">Start Game But It Works</button></li>
+					
+				<li><button v-if="mtnOrJungle" @click="clickChoiceButton('mountains')" class="menubtn">Mountains</button></li>
+				<li><button v-if="mtnOrJungle" @click="clickChoiceButton('jungle')" class="menubtn">Jungle</button></li>
 
-				<li>
-					<button v-if="knivesOrCrossbow" @click="clickChoiceButton('knives')" class="menubtn">Throwing Knives</button>
-				</li>
-				<li >
-					<button v-if="knivesOrCrossbow" @click="clickChoiceButton('crossbow')" class="menubtn">Crossbow</button>
-				</li>
+				<li><button v-if="knivesOrCrossbow" @click="clickChoiceButton('knives')" class="menubtn">Throwing Knives</button></li>
+				<li><button v-if="knivesOrCrossbow" @click="clickChoiceButton('crossbow')" class="menubtn">Crossbow</button></li>
+
+				<li><button v-if="minotaurOrDragon" @click="clickChoiceButton('minotaur')" class="menubtn">Minotaur</button></li>
+				<li><button v-if="minotaurOrDragon" @click="clickChoiceButton('dragon')" class="menubtn">Dragon</button></li>
+					
 			</ul>
 		</div>
 
@@ -89,19 +80,24 @@ export default {
         imagePath: '@/assets/OctocatGif.gif',
         story: [
 			'You have awoken in the octocat universe.. a real cat-astrophe',
-			'This is your adventure, continue forward how you wish',
+			'This is your adventure, continue forward how you wish', 
 			'You have been given a map with four locations',
-			'Choose Wisely!',
+			'Choose Wisely!', //CHOICE
 			//continues as if user chose mountains, skip to index __ for jungle
 			'You trek along the path and up the mountain, slowly',
 			'You stumble upon some items!',
 			'There is a rogue suit with throwing knives and a crossbow..',
 			//stop loop and store choice
-			'You only have room for one..',
+			'You only have room for one..', //CHOICE
 			'You walk along the trail, through the mountain',
 			'There are two tunnels to exit the mountain!',
 			'One has a minotaur, the other an ice-breathing dragon',
-			//continues for minotaur, skip to index __ for dragon
+			'Pick your poison..', //CHOICE
+			//continues for minotaur (knives -> crossbow), skip to index __ for dragon
+			'You use your throwing knives to defeat the minautar!',
+			//crossbow
+			'The crossbow is useless against the minautar..',
+			'You died..'
 			//if throwing knives and minautar, survive
 			//if crossbow and dragon, survive 
 			
@@ -111,6 +107,7 @@ export default {
         startMenu: true,
         mtnOrJungle: false,
         knivesOrCrossbow: false,
+        minotaurOrDragon: false,
         choice1: '',
         watingForInput: false,
         hasKnives: false
@@ -143,10 +140,14 @@ export default {
 			this.showFirstChoiceLayout(2);
 			//if waiting for input, checkc if either button pressed
 			this.watingForInput = true;
-			//must wait until option chosen
-			//not continuously checking conditions after exiting once
 
-		
+		}
+		else if(this.lineNumber == 11){
+			this.changeBackground();
+			this.showFirstChoiceLayout(3);
+			//if waiting for input, checkc if either button pressed
+			this.watingForInput = true;
+
 		}
 		else{
 			this.lineNumber++;
@@ -166,6 +167,10 @@ export default {
 			this.mtnOrJungle = false;
 			this.knivesOrCrossbow = true;
 		}
+		else if(choice == 3){
+			this.knivesOrCrossbow = false;
+			this.minotaurOrDragon = true;
+		}
     },
 
     clickChoiceButton: function(choice){
@@ -178,13 +183,25 @@ export default {
 		else if(this.choice1 == 'jungle'){
 			this.lineNumber = 1;
 		}
-		if(this.choice1 == 'knives'){
+
+		else if(this.choice1 == 'knives'){
 			this.hasKnives = true;
 			this.lineNumber = 8;
 		}
 		else if(this.choice1 == 'crossbow'){
 			this.lineNumber = 8;
 		}
+
+		else if(this.choice1 == 'minotaur'){
+			if(this.hasKnives){
+				this.lineNumber = 12;
+			}
+			
+		}
+		else if(this.choice1 == 'dragon'){
+			this.lineNumber = 12;
+		}
+
     }
   }
 
