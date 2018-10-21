@@ -10,7 +10,7 @@
 
 		<div id="imgcontainer">
 			<transition name="spin">
-				<img v-if="gameRunning" alt="Image Not Found" v-bind:src='imagePath'>	
+				<img v-if="gameRunning" alt="Fuck this shit I'm out" v-bind:src='imagePath'>	
 			</transition>
 
 		</div>
@@ -137,8 +137,10 @@ export default {
 			'@/assets/TempleWall.png',//8
 			'@/assets/GameOver.png'//9
 		],
+
 		//imgChoice: 0,
 		//imagePath: this.imgName[this.imgChoice],
+
         startMenu: true,
         mtnOrJungle: false,
         knivesOrCrossbow: false,
@@ -147,7 +149,7 @@ export default {
         investigateOrHide: false,
         choice1: '',
         watingForInput: false,
-		hasKnives: false,
+		hasKnives: false
     }
   },
   methods: {
