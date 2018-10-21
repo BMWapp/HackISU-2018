@@ -255,7 +255,6 @@ export default {
 			this.changeBackground();
 
 		}
-
 		else if(this.choice1 == 'knives'){
 			this.hasKnives = true;
 			this.lineNumber = 8;
