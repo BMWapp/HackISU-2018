@@ -138,7 +138,7 @@ export default {
 			'@/assets/GameOver.png',//9
 		],
 		imgChoice: 0,
-		imagePath: imgName[imgChoice],
+		imagePath: this.imgName[this.imgChoice],
         startMenu: true,
         mtnOrJungle: false,
         knivesOrCrossbow: false,
