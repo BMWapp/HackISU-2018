@@ -24,7 +24,7 @@
 					v-if="playername"
 					class="gametext" 
 					:repeat='0'
-					:type-delay='60'
+					:type-delay='10'
 					:erase-on-complete='true'
 					:pre-erase-delay='500'
 					erase-style='clear'>
@@ -53,6 +53,9 @@
 
 				<li><button v-if="castleOrTemple" @click="clickChoiceButton('castle')" class="menubtn">Castle</button></li>
 				<li><button v-if="castleOrTemple" @click="clickChoiceButton('temple')" class="menubtn">Temple</button></li>
+
+				<li><button v-if="investigateOrHide" @click="clickChoiceButton('investigate')" class="menubtn">Investigate</button></li>
+				<li><button v-if="investigateOrHide" @click="clickChoiceButton('hide')" class="menubtn">Hide</button></li>
 					
 			</ul>
 		</div>
@@ -109,7 +112,14 @@ export default {
 			'You walk into the castle and see a sword..', //18
 			'Curious, you creep toward the sword to grab it',
 			'There\'s a mysterious noise inside the castle..',
-			'Do you investigate or hide?' //CHOICE
+			'Do you investigate or hide?', //CHOICE
+			'You walk closer to the noise; it\'s coming out of a barrell..', //22
+			'Suddenly, a jester jumps out at you!!!',
+			'Jester: Hello, I haven\'t seen anyone in years..',
+			'Would you like to hear a joke?',
+			'You say yes, who doesn\'t like a good joke?',
+			//say a random joke
+			''
 			
 			
 
@@ -181,6 +191,11 @@ export default {
 			this.showFirstChoiceLayout(4);
 			this.watingForInput = true;
 		}
+		else if(this.lineNumber == 21){
+			this.changeBackground();
+			this.showFirstChoiceLayout(5);
+			this.watingForInput = true;
+		}
 		else{
 			this.lineNumber++;
 		}
@@ -207,6 +222,10 @@ export default {
 			this.minotaurOrDragon = false;
 			this.castleOrTemple = true;
 		}
+		else if(choice == 5){
+			this.castleOrTemple = false;
+			this.investigateOrHide = true;
+		}
     },
 
     clickChoiceButton: function(choice){
@@ -220,8 +239,11 @@ export default {
 		}
 		else if(this.choice1 == 'jungle'){
 			this.imgChoice == 5;
-			this.lineNumber = 1;
+
+			this.lineNumber = 1; //update with story
+
 			this.changeBackground();
+
 		}
 
 		else if(this.choice1 == 'knives'){
@@ -260,6 +282,13 @@ export default {
 		}
 		else if(this.choice1 == 'temple'){
 			this.lineNumber = 1; //change when we write the story
+		}
+
+		else if(this.choice1 == 'investigate'){
+			this.lineNumber = 22;
+		}
+		else if(this.choice1 == 'hide'){
+			this.lineNumber = 1; //update later with story
 		}
 
     }
