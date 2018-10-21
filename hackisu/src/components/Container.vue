@@ -86,7 +86,7 @@ export default {
 			//continues as if user chose mountains, skip to index __ for jungle
 			'You trek along the path and up the mountain, slowly',
 			'You stumble upon some items!',
-			'There is a rogue suit with throwing knives and a crossbow..',
+			'There are throwing knives and a crossbow..',
 			//stop loop and store choice
 			'You only have room for one..', //CHOICE
 			'You walk along the trail, through the mountain',
@@ -155,7 +155,7 @@ export default {
 
     },
 	changeBackground: function(){
-		//this.imagePath = '@/assets/PathChoice1.png'
+		this.imagePath = '@/assets/PathChoice1.png'
     },
     showFirstChoiceLayout: function(choice){
 		//change buttons
