@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+
     <Container/>
 
 
@@ -15,6 +16,7 @@ export default {
   components: {
     Container
   }
+
 }
 
 
@@ -28,6 +30,12 @@ export default {
   text-align: center;
   color: #2c3e50;
 
+}
+
+
+@font-face {
+    font-family: "";
+    src: url(http://www.example.org/mycustomfont.ttf) format("truetype");
 }
 
 
