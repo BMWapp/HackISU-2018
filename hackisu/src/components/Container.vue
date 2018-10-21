@@ -126,20 +126,20 @@ export default {
 		],
 		jokes: [],
 		imgName: [],
-		/*imgName: [
-			'@/assets/PathChoice1.png',//0
-			'@/assets/MountainWepChoice.png',//1
-			'@/assets/MountainPathChoice.png',//2
-			'@/assets/Minotaur.png',//3
-			'@/assets/Dragon.png',//4
-			'@/assets/Jaguar.png',//5
-			'@/assets/PathChoice2.png',//6
-			'@/assets/ThroneRoom.png',//7
-			'@/assets/TempleWall.png',//8
-			'@/assets/GameOver.png'//9
-		],*/
+		imgName: [
+		//	'@/assets/PathChoice1.png',//0
+		//	'@/assets/MountainWepChoice.png',//1
+		//	'@/assets/MountainPathChoice.png',//2
+		//	'@/assets/Minotaur.png',//3
+		//	'@/assets/Dragon.png',//4
+		//	'@/assets/Jaguar.png',//5
+		//	'@/assets/PathChoice2.png',//6
+		//	'@/assets/ThroneRoom.png',//7
+		//	'@/assets/TempleWall.png',//8
+		//	'@/assets/GameOver.png'//9
+		],
 		imgChoice: null,
-		//imagePath: imgName[0],
+		imagePath: null,
         startMenu: true,
         mtnOrJungle: false,
         knivesOrCrossbow: false,
