@@ -1,7 +1,7 @@
 <!-- TODO: 
-	Fonts Integration
-	Game Logic and Content
-	Import correct images
+	Fonts Integration - Nitin
+	Game Logic and Content - Justin
+	Import correct images - Brevin
 	Button Styling/Images
  -->
 
