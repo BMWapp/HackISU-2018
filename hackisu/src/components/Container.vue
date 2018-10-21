@@ -80,7 +80,7 @@ export default {
   data: function () {
     return {
         lineNumber: 0,
-        imagePath: '@/assets/OctocatGif.gif',
+        imagePath: '@/assets/',
         story: [
 			'You have awoken in the octocat universe.. a real cat-astrophe',
 			'This is your adventure, continue forward how you wish', 
