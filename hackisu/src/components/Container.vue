@@ -119,7 +119,16 @@ export default {
 			'Would you like to hear a joke?',
 			'You say yes, who doesn\'t like a good joke?',
 			//say a random joke
+			// JUNGLE BEGINS
+			'You cut through dense foliage in the jungle..', //27
+			'You come across an angry jaguar!',
+			'Do you fight or run?', //CHOICE
+			'Running was the only survival option, good choice',
+			'You\'re so out of breath, so you stop at a tree stump',
+			'As you walk closer, you see that it is actually a chest!',
+			'Inside is a blow dart!',
 			''
+
 			
 			
 
@@ -242,7 +251,7 @@ export default {
 		else if(this.choice1 == 'jungle'){
 			this.imgChoice == 5;
 
-			this.lineNumber = 1; //update with story
+			this.lineNumber = 27; //update with story
 
 			this.changeBackground();
 
