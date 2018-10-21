@@ -103,14 +103,28 @@ export default {
 			
 			
 
-        ],
+		],
+		jokes: [],
+		imgName: [
+			'PathChoice1',//0
+			'MountainWepChoice',//1
+			'MountainPathChoice',//2
+			'Minotaur',//3
+			'Dragon',//4
+			'Jaguar',//5
+			'PathChoice2',//6
+			'ThroneRoom',//7
+			'TempleWall',//8
+			'GameOver',//9
+		],
+		imgChoice: 0,
         startMenu: true,
         mtnOrJungle: false,
         knivesOrCrossbow: false,
         minotaurOrDragon: false,
         choice1: '',
         watingForInput: false,
-        hasKnives: false
+		hasKnives: false,
     }
   },
   methods: {
@@ -155,7 +169,7 @@ export default {
 
     },
 	changeBackground: function(){
-		this.imagePath = '@/assets/PathChoice1.png'
+		this.imagePath = '@/assets/{{this.imgName[this.imgChoice]}}.png'
     },
     showFirstChoiceLayout: function(choice){
 		//change buttons
@@ -178,9 +192,11 @@ export default {
 		console.log(this.choice1);
 		this.watingForInput = false;
 		if(this.choice1 == 'mountains'){
+			this.imgChoice = 1;
 			this.lineNumber = 4;
 		}
 		else if(this.choice1 == 'jungle'){
+			this.imgChoice == 5;
 			this.lineNumber = 1;
 		}
 
