@@ -83,7 +83,6 @@ export default {
   data: function () {
     return {
         lineNumber: 0,
-        imagePath: '@/assets/PathChoice1.png',
         story: [
 			'You have awoken in the Octocat universe.. a real cat-astrophe',
 			'This is your adventure, continue forward how you wish', 
@@ -127,18 +126,19 @@ export default {
 		],
 		jokes: [],
 		imgName: [
-			'PathChoice1',//0
-			'MountainWepChoice',//1
-			'MountainPathChoice',//2
-			'Minotaur',//3
-			'Dragon',//4
-			'Jaguar',//5
-			'PathChoice2',//6
-			'ThroneRoom',//7
-			'TempleWall',//8
-			'GameOver',//9
+			'@/assets/PathChoice1.png',//0
+			'@/assets/MountainWepChoice.png',//1
+			'@/assets/MountainPathChoice.png',//2
+			'@/assets/Minotaur.png',//3
+			'@/assets/Dragon.png',//4
+			'@/assets/Jaguar.png',//5
+			'@/assets/PathChoice2.png',//6
+			'@/assets/ThroneRoom.png',//7
+			'@/assets/TempleWall.png',//8
+			'@/assets/GameOver.png',//9
 		],
 		imgChoice: 0,
+		imagePath: imgName[imgChoice],
         startMenu: true,
         mtnOrJungle: false,
         knivesOrCrossbow: false,
@@ -164,7 +164,7 @@ export default {
     showNextLine: function(){
 		this.lineComplete = true;
 		if(this.lineNumber == 3){ //index of first choice
-			this.changeBackground();
+			//this.changeBackground();
 			this.showFirstChoiceLayout(1);
 			//if waiting for input, checkc if either button pressed
 			this.watingForInput = true;
@@ -173,21 +173,21 @@ export default {
 
 		}
 		else if(this.lineNumber == 7){
-			this.changeBackground();
+			//this.changeBackground();
 			this.showFirstChoiceLayout(2);
 			//if waiting for input, checkc if either button pressed
 			this.watingForInput = true;
 
 		}
 		else if(this.lineNumber == 11){
-			this.changeBackground();
+			//this.changeBackground();
 			this.showFirstChoiceLayout(3);
 			//if waiting for input, checkc if either button pressed
 			this.watingForInput = true;
 
 		}
 		else if(this.lineNumber == 17){
-			this.changeBackground();
+			//this.changeBackground();
 			this.showFirstChoiceLayout(4);
 			this.watingForInput = true;
 		}
@@ -202,7 +202,7 @@ export default {
 
     },
 	changeBackground: function(){
-		//this.imagePath = '@/assets/{{this.imgName[this.imgChoice]}}.png'
+		this.imagePath = this.imgName[this.imgChoice];
     },
     showFirstChoiceLayout: function(choice){
 		//change buttons
@@ -235,18 +235,27 @@ export default {
 		if(this.choice1 == 'mountains'){
 			this.imgChoice = 1;
 			this.lineNumber = 4;
+			this.changeBackground();
 		}
 		else if(this.choice1 == 'jungle'){
 			this.imgChoice == 5;
+
 			this.lineNumber = 1; //update with story
+
+			this.changeBackground();
+
 		}
 
 		else if(this.choice1 == 'knives'){
 			this.hasKnives = true;
 			this.lineNumber = 8;
+			this.imgChoice = 2;
+			this.changeBackground();
 		}
 		else if(this.choice1 == 'crossbow'){
 			this.lineNumber = 8;
+			this.imgChoice = 2;
+			this.changeBackground();
 		}
 
 		else if(this.choice1 == 'minotaur'){
