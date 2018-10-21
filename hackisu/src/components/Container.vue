@@ -97,9 +97,12 @@ export default {
 			'You use your throwing knives to defeat the minautar!',
 			//crossbow
 			'The crossbow is useless against the minautar..',
-			'You died..'
+			'You died..', //14
+			'You use your crossbow to defeat the dragon!',
 			//if throwing knives and minautar, survive
 			//if crossbow and dragon, survive 
+			'You\'ve come across another fork in the road',
+			'Will you contine onto the castle or the temple?'
 			
 			
 
@@ -122,6 +125,7 @@ export default {
         mtnOrJungle: false,
         knivesOrCrossbow: false,
         minotaurOrDragon: false,
+        castleOrTemple: false,
         choice1: '',
         watingForInput: false,
 		hasKnives: false,
@@ -163,6 +167,11 @@ export default {
 			this.watingForInput = true;
 
 		}
+		else if(this.lineNumber == 17){
+			this.changeBackground();
+			this.showFirstChoiceLayout(4);
+			this.watingForInput = true;
+		}
 		else{
 			this.lineNumber++;
 		}
@@ -189,7 +198,7 @@ export default {
 
     clickChoiceButton: function(choice){
 		this.choice1 = choice;
-		console.log(this.choice1);
+		//console.log(this.choice1);
 		this.watingForInput = false;
 		if(this.choice1 == 'mountains'){
 			this.imgChoice = 1;
@@ -212,10 +221,20 @@ export default {
 			if(this.hasKnives){
 				this.lineNumber = 12;
 			}
-			
+			else{
+				this.lineNumber = 13;
+			}
 		}
 		else if(this.choice1 == 'dragon'){
 			this.lineNumber = 12;
+			if(this.hasKnives){
+				//die
+				this.lineNumber = 14;
+			}
+			else{
+				//live
+				this.lineNumber = 15;
+			}
 		}
 
     }
