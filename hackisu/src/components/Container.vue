@@ -138,7 +138,7 @@ export default {
 			'@/assets/TempleWall.png',//8
 			'@/assets/GameOver.png'//9
 		],*/
-		//imgChoice,
+		imgChoice: null,
 		//imagePath: imgName[0],
         startMenu: true,
         mtnOrJungle: false,
@@ -153,18 +153,18 @@ export default {
   },
   methods: {
     startGame: function(){
-      this.gameRunning = !this.gameRunning;
-      this.nameInputVisible = true;
-	  this.imgName[0]='@/assets/PathChoice1.png';
-	  this.imgName[1]='@/assets/MountainWepChoice.png';
-	  this.imgName[2]='@/assets/MountainPathChoice.png';
-	  this.imgName[3]='@/assets/Minotaur.png';
-	  this.imgName[4]='@/assets/Dragon.png';
-	  this.imgName[5]='@/assets/Jaguar.png';
-	  this.imgName[6]='@/assets/PathChoice2.png';
-	  this.imgName[7]='@/assets/ThroneRoom.png';
-	  this.imgName[8]='@/assets/TempleWall.png';
-	  this.imgName[9]='@/assets/GameOver.png';
+		this.gameRunning = !this.gameRunning;
+		this.nameInputVisible = true;
+		this.imgName[0]='@/assets/PathChoice1.png';
+		this.imgName[1]='@/assets/MountainWepChoice.png';
+		this.imgName[2]='@/assets/MountainPathChoice.png';
+		this.imgName[3]='@/assets/Minotaur.png';
+		this.imgName[4]='@/assets/Dragon.png';
+		this.imgName[5]='@/assets/Jaguar.png';
+		this.imgName[6]='@/assets/PathChoice2.png';
+		this.imgName[7]='@/assets/ThroneRoom.png';
+		this.imgName[8]='@/assets/TempleWall.png';
+		this.imgName[9]='@/assets/GameOver.png';
     },
     disappear: function(){
       this.nameInputVisible = false
@@ -212,7 +212,7 @@ export default {
 
     },
 	changeBackground: function(){
-		//this.imagePath = this.imgName[this.imgChoice];
+		this.imagePath = this.imgName[this.imgChoice];
     },
     showFirstChoiceLayout: function(choice){
 		//change buttons
