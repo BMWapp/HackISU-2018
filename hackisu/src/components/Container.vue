@@ -135,7 +135,7 @@ export default {
 			'@/assets/PathChoice2.png',//6
 			'@/assets/ThroneRoom.png',//7
 			'@/assets/TempleWall.png',//8
-			'@/assets/GameOver.png',//9
+			'@/assets/GameOver.png'//9
 		],
 		imgChoice: 0,
 		imagePath: this.imgName[this.imgChoice],
@@ -147,7 +147,7 @@ export default {
         investigateOrHide: false,
         choice1: '',
         watingForInput: false,
-		hasKnives: false,
+		hasKnives: false
     }
   },
   methods: {
